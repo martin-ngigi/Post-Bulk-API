@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "cee9693c-ad18-44e8-9266-640d60655107",
+		"name": "Post-Bulk-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Post List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {  \r\n        \"name\":\"Mr. Mercedes:\",\r\n        \"author\":\"Stephen King\"\r\n    },\r\n    {\r\n        \"name\":\"Killing Floor\", \r\n        \"author\":\"Lee Child\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/books/add/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"add",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 Post either single or list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/books/add/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"add",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
