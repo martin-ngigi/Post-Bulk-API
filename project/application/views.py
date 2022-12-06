@@ -10,8 +10,7 @@ from rest_framework import status, mixins, generics
 '''
 Can only create a list of objects only.
 '''
-#URL -> https://stackoverflow.com/questions/22881067/django-rest-framework-post-array-of-objects
-#    -> https://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview
+#   URL -> https://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview
 class BookList(generics.ListCreateAPIView):
     model = Books
     serializer_class = BookSerializer
