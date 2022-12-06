@@ -1,5 +1,5 @@
-POST -> Create List 
-
+1. POST -> Create List 
+Endpoint -> http://127.0.0.1:8000/books/add/
 body: 
 [
     {  
@@ -25,3 +25,47 @@ expected response:
         "author": "Lee Child"
     }
 ]
+
+
+2. POST -> Create List 
+Endpoint ->http://127.0.0.1:8000/books/add-multiple/
+2.1 Add list---------->
+body: 
+[
+    {  
+        "name":"Mr. Mercedes:",
+        "author":"Stephen King"
+    },
+    {
+        "name":"Killing Floor", 
+        "author":"Lee Child"
+    }
+] 
+
+expected response:
+[
+    {
+        "id": 10,
+        "name": "Mr. Mercedes:",
+        "author": "Stephen King"
+    },
+    {
+        "id": 11,
+        "name": "Killing Floor",
+        "author": "Lee Child"
+    }
+]
+
+2.2. Add only a single item---------->
+body: 
+ {
+    "name":"Killing Floor", 
+    "author":"Lee Child"
+}
+
+expected response:
+{
+    "id": 12,
+    "name": "Killing Floor",
+    "author": "Lee Child"
+}
