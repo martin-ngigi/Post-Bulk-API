@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#Marin added
+#TOKEN_CREATE_ON_CREATION = False
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #Third party apps 
+    #'django_model_mixins',
+
+    'application',
 ]
 
 MIDDLEWARE = [

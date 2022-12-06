@@ -1,0 +1,27 @@
+POST -> Create List 
+
+body: 
+[
+    {  
+        "name":"Mr. Mercedes:",
+        "author":"Stephen King"
+    },
+    {
+        "name":"Killing Floor", 
+        "author":"Lee Child"
+    }
+] 
+
+expected response:
+[
+    {
+        "id": 8,
+        "name": "Mr. Mercedes:",
+        "author": "Stephen King"
+    },
+    {
+        "id": 9,
+        "name": "Killing Floor",
+        "author": "Lee Child"
+    }
+]
