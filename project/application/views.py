@@ -7,29 +7,12 @@ from rest_framework import status, mixins, generics
 
 
 # POSTING LIST/ARRAY i.e []
+'''
+Can only create a list of objects only.
+'''
 #URL -> https://stackoverflow.com/questions/22881067/django-rest-framework-post-array-of-objects
 #    -> https://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview
 class BookList(generics.ListCreateAPIView):
-
-    """
-    ViewSet create and list books
-
-    Usage single : POST
-    {
-        "name":"Killing Floor: A Jack Reacher Novel", 
-        "author":"Lee Child"
-    }
-
-    Usage array : POST
-    [{  
-        "name":"Mr. Mercedes: A Novel (The Bill Hodges Trilogy)",
-        "author":"Stephen King"
-    },{
-        "name":"Killing Floor: A Jack Reacher Novel", 
-        "author":"Lee Child"
-    }]
-    """
-
     model = Books
     serializer_class = BookSerializer
 
