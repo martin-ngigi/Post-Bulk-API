@@ -69,3 +69,75 @@ expected response:
     "name": "Killing Floor",
     "author": "Lee Child"
 }
+
+
+3.POST -> Create user
+endpoint -> http://127.0.0.1:8000/books/add-accounts/
+body:
+{
+    "first_name": "Martin",
+    "last_name":"Wainaina",
+    "email": "martin@gmail.com" 
+}
+response
+{
+    "id": 3,
+    "account": [],
+    "first_name": "Martin",
+    "last_name": "Wainaina",
+    "email": "martin@gmail.com"
+}
+
+
+
+4.POST -> Create a nested account Object... ie. add account in user
+4.1 POST single account
+endpoint -> http://127.0.0.1:8000/books/add-accounts/
+body:
+{
+    "user": 2,
+    "account_name": "Martin",
+    "amount":1000
+}
+exepected reult:
+{
+    "id": 3,
+    "account_name": "Martin",
+    "create_date": "2022-12-07",
+    "amount": 1000,
+    "user": 2
+}
+
+4.2 POST multiple accounts in one user
+endpoint -> http://127.0.0.1:8000/books/add-accounts/
+body:
+ [
+    {
+        "user": 1,
+        "account_name": "Martin 1",
+        "amount":1000
+    },
+    {
+        "user": 1,
+        "account_name": "Martin 2",
+        "amount":1000
+    }
+]
+
+exepected response:
+[
+    {
+        "id": 4,
+        "account_name": "Martin 1",
+        "create_date": "2022-12-07",
+        "amount": 1000,
+        "user": 1
+    },
+    {
+        "id": 5,
+        "account_name": "Martin 2",
+        "create_date": "2022-12-07",
+        "amount": 1000,
+        "user": 1
+    }
+]
